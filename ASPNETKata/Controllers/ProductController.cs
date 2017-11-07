@@ -53,8 +53,9 @@ namespace ASPNETKata.Controllers
                     conn.Execute("INSERT INTO product (Name) VALUES (@Name)", new {Name = name});
                     return RedirectToAction("Index");
                 }
-                catch
+                catch (Exception e)
                 {
+                    Console.WriteLine("exception " + e);
                     return View();
                 }
             }
@@ -99,15 +100,20 @@ namespace ASPNETKata.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
+            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            using (var conn = new MySqlConnection(connectionString))
             {
-                // TODO: Add delete logic here
+                conn.Open();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+                try
+                {
+                    conn.Execute("DELETE FROM Product WHERE ProductId = @Id", new { Id = id });
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View();
+                }
             }
         }
     }
