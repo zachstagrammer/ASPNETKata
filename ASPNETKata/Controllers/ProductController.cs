@@ -41,15 +41,22 @@ namespace ASPNETKata.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            var name = collection["Name"];
 
-                return RedirectToAction("Index");
-            }
-            catch
+            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            using (var conn = new MySqlConnection(connectionString))
             {
-                return View();
+                conn.Open();
+
+                try
+                {
+                    conn.Execute("INSERT INTO product (Name) VALUES (@Name)", new {Name = name});
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View();
+                }
             }
         }
 
