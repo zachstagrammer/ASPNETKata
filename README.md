@@ -2,13 +2,17 @@
 
 Engage with ASP.NET MVC
 
+## First Step
+
+Fork and clone this repo
+
 ## Tasks
 
-1. [ASP.NET Razor Step](ASP.NET-Razor.md)
+1. [ASP.NET Razor](ASP.NET-Razor.md)
 1. [Inversion of Control](IoC.md)
 1. [Ractive Step](Ractive.md)
 
-## Final Task
+## Final Step
 
 Make a pull request only when all tasks above have been completed.
 
