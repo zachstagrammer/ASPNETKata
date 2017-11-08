@@ -14,7 +14,7 @@ namespace ASPNETKata.Controllers
         {
             var list = new List<Person>();
 
-            list.Add(new Person { Age = 14, IsMinor = true, Name = "Dirty Harry" });
+            list.Add(new Person { Name = "Dirty Harry", Age = 14, IsMinor = true });
             list.Add(new Person { Name = "Vito Corleone", Age = 18, IsMinor = false });
             list.Add(new Person { Name = "Jules Winnfield", Age = 17, IsMinor = true });
             list.Add(new Person { Name = "Nicky Santoro", Age = 54, IsMinor = false });
