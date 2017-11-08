@@ -28,7 +28,13 @@ namespace ASPNETKata.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                var product = conn.Query<Product>("SELECT * FROM Product WHERE ProductId = @id", new { Id = id }).FirstOrDefault();
+                return View(product);
+            }
         }
 
         // GET: Product/Create
@@ -105,15 +111,8 @@ namespace ASPNETKata.Controllers
             {
                 conn.Open();
 
-                try
-                {
                     conn.Execute("DELETE FROM Product WHERE ProductId = @Id", new { Id = id });
                     return RedirectToAction("Index");
-                }
-                catch
-                {
-                    return View();
-                }
             }
         }
     }
