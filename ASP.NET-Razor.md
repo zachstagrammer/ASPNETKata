@@ -41,9 +41,3 @@ Use your controller to initialize a list of people and pass that list to your Li
 Use Dapper and SQL for your Model
 
 Do the steps above for the Product and grab that data from your localhost SQL server.
-
-### Step 7
-
-Make a pull request
-
-**Good luck!**
