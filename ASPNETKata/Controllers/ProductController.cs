@@ -16,7 +16,7 @@ namespace ASPNETKata.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            var connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -28,7 +28,7 @@ namespace ASPNETKata.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            var connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -49,7 +49,7 @@ namespace ASPNETKata.Controllers
         {
             var name = collection["Name"];
 
-            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            var connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -79,7 +79,7 @@ namespace ASPNETKata.Controllers
         {
             var name = collection["Name"];
 
-            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            var connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
@@ -106,7 +106,7 @@ namespace ASPNETKata.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            var connectionString = "Server=localhost;Database=adventureworks;Uid=root;Pwd=unsecuresqlpass";
+            var connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
