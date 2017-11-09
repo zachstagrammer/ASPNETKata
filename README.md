@@ -8,9 +8,9 @@ Fork and clone this repo
 
 ## Tasks
 
-1. [ASP.NET MVC with Razor](ASP.NET-Razor.md)
-1. [Inversion of Control](IoC.md)
-1. [Ractive Step](Ractive.md)
+1. [ASP.NET MVC with Razor](docs/ASP.NET-Razor.md)
+1. [Inversion of Control](docs/IoC.md)
+1. [Ractive Step](docs/Ractive.md)
 
 ## Final Step
 
