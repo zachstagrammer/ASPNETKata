@@ -1,13 +1,4 @@
-﻿using ASPNETKata.Models;
-using Dapper;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using MySql.Data.MySqlClient;
+﻿using System.Web.Mvc;
 using ASPNETKata.Shared;
 
 namespace ASPNETKata.Controllers

@@ -1,6 +1,5 @@
 using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 using ASPNETKata.Shared;
 using System.Configuration;
 using System.Data;
