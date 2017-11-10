@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MySql.Data.MySqlClient;
+using ASPNETKata.Shared;
 
 namespace ASPNETKata.Controllers
 {
@@ -20,7 +21,7 @@ namespace ASPNETKata.Controllers
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                var list = conn.Query<Product>("SELECT * from Product");
+                var list = conn.Query<Product>("SELECT * from Product ORDER BY ProductId DESC");
                 return View(list);
             }
         }

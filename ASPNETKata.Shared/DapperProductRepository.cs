@@ -1,10 +1,8 @@
-using Dapper;
-using System;
 using System.Collections.Generic;
 using System.Data;
+using Dapper;
 
-
-namespace InversionOfControl.Shared
+namespace ASPNETKata.Shared
 {
     public class DapperProductRepository : IProductRepository
     {
